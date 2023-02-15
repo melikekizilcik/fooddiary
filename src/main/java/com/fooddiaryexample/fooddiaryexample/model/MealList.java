@@ -20,4 +20,8 @@ public class MealList {
     @JoinColumn(name = "meal")
     private Meal meal;
 
+    @ManyToOne
+    @JoinColumn(name = "nutrition")
+    private Nutrition nutrition;
+
 }
