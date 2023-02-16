@@ -1,16 +1,17 @@
 package com.fooddiaryexample.fooddiaryexample.service;
 
+import com.fooddiaryexample.fooddiaryexample.dto.UserDto;
 import com.fooddiaryexample.fooddiaryexample.model.User;
 
 import java.util.List;
 
 public interface UserService {
 
-    User addUser(User user);
+    UserDto addUser(UserDto user);
 
-    List<User> getAll();
+    List<UserDto> getAll();
 
-    User updateUser(Long id, User user);
+    UserDto updateUser(Long id, UserDto user);
 
-    User deleteUser(Long id);
+    UserDto deleteUser(Long id);
 }

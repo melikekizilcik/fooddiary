@@ -1,5 +1,6 @@
 package com.fooddiaryexample.fooddiaryexample.controller;
 
+import com.fooddiaryexample.fooddiaryexample.dto.UserDto;
 import com.fooddiaryexample.fooddiaryexample.model.User;
 import com.fooddiaryexample.fooddiaryexample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,23 +17,23 @@ public class UserController {
 
     //METHODLAR:
     @GetMapping("/getall")
-    public List<User> getAll(){
+    public List<UserDto> getAll(){
         return userService.getAll();
     }
 
     @PostMapping("/add")
-    public User add(@RequestBody User user){
+    public UserDto add(@RequestBody UserDto user){
         return userService.addUser(user);
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable("id") Long id, @RequestBody User user){
-        User resultUser = userService.updateUser(id, user);
+    public ResponseEntity<UserDto> updateUser(@PathVariable("id") Long id, @RequestBody UserDto user){
+        UserDto resultUser = userService.updateUser(id, user);
         return ResponseEntity.ok(resultUser);
     }
 
     @DeleteMapping("/delete/{id}")
-    public User deleteUser(@PathVariable("id") Long id){
+    public UserDto deleteUser(@PathVariable("id") Long id){
         return userService.deleteUser(id);
     }
 }
