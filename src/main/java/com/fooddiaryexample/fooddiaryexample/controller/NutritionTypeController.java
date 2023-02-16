@@ -1,5 +1,6 @@
 package com.fooddiaryexample.fooddiaryexample.controller;
 
+import com.fooddiaryexample.fooddiaryexample.dto.NutritionTypeDto;
 import com.fooddiaryexample.fooddiaryexample.model.NutritionType;
 import com.fooddiaryexample.fooddiaryexample.service.NutritionTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,23 +17,23 @@ public class NutritionTypeController {
 
     //METHODLAR
     @PostMapping("/add")
-    public NutritionType addNutritionType(@RequestBody NutritionType nutritionType){
+    public NutritionTypeDto addNutritionType(@RequestBody NutritionTypeDto nutritionType){
         return nutritionTypeService.addNutritionType(nutritionType);
     }
 
     @GetMapping("/getall")
-    public List<NutritionType> getAll(){
+    public List<NutritionTypeDto> getAll(){
         return nutritionTypeService.getAll();
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<NutritionType> updateNutritionType(@PathVariable("id") Long id, @RequestBody NutritionType nutritionType){
-        NutritionType resultType = nutritionTypeService.updateNutritionType(id, nutritionType);
+    public ResponseEntity<NutritionTypeDto> updateNutritionType(@PathVariable("id") Long id, @RequestBody NutritionTypeDto nutritionType){
+        NutritionTypeDto resultType = nutritionTypeService.updateNutritionType(id, nutritionType);
         return ResponseEntity.ok(resultType);
     }
 
     @DeleteMapping("/delete/{id}")
-    public NutritionType deleteNutritionType(@PathVariable("id") Long id){
+    public NutritionTypeDto deleteNutritionType(@PathVariable("id") Long id){
         return nutritionTypeService.deleteNutritionType(id);
     }
 

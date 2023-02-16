@@ -1,16 +1,17 @@
 package com.fooddiaryexample.fooddiaryexample.service;
 
+import com.fooddiaryexample.fooddiaryexample.dto.NutritionTypeDto;
 import com.fooddiaryexample.fooddiaryexample.model.NutritionType;
 
 import java.util.List;
 
 public interface NutritionTypeService {
 
-    NutritionType addNutritionType(NutritionType nutritionType);
+    NutritionTypeDto addNutritionType(NutritionTypeDto nutritionType);
 
-    List<NutritionType> getAll();
+    List<NutritionTypeDto> getAll();
 
-    NutritionType updateNutritionType(Long id,NutritionType nutritionType);
+    NutritionTypeDto updateNutritionType(Long id,NutritionTypeDto nutritionType);
 
-    NutritionType deleteNutritionType(Long id);
+    NutritionTypeDto deleteNutritionType(Long id);
 }
