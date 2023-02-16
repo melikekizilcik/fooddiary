@@ -1,5 +1,6 @@
 package com.fooddiaryexample.fooddiaryexample.controller;
 
+import com.fooddiaryexample.fooddiaryexample.dto.MealListDto;
 import com.fooddiaryexample.fooddiaryexample.model.Meal;
 import com.fooddiaryexample.fooddiaryexample.model.MealList;
 import com.fooddiaryexample.fooddiaryexample.service.MealListService;
@@ -17,23 +18,23 @@ public class MealListController {
     private MealListService mealListService;
 
     @PutMapping("/add")
-    public MealList addMealList(@RequestBody MealList mealList){
+    public MealListDto addMealList(@RequestBody MealListDto mealList){
         return mealListService.addMealList(mealList);
     }
 
     @GetMapping("/getall")
-    public List<MealList> getAll(){
+    public List<MealListDto> getAll(){
         return mealListService.getAll();
     }
 
     @DeleteMapping("/delete/{id}")
-    public MealList deleteMealList(@PathVariable("id") Long id){
+    public MealListDto deleteMealList(@PathVariable("id") Long id){
         return mealListService.deleteMealList(id);
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<MealList> updateMealList(@PathVariable("id") Long id, @RequestBody MealList mealList){
-        MealList updatedMealList = mealListService.updateMealList(id, mealList);
+    public ResponseEntity<MealListDto> updateMealList(@PathVariable("id") Long id, @RequestBody MealListDto mealList){
+        MealListDto updatedMealList = mealListService.updateMealList(id, mealList);
         return ResponseEntity.ok(updatedMealList);
     }
 }

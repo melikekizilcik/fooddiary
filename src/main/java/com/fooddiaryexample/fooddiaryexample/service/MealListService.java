@@ -1,15 +1,16 @@
 package com.fooddiaryexample.fooddiaryexample.service;
 
+import com.fooddiaryexample.fooddiaryexample.dto.MealListDto;
 import com.fooddiaryexample.fooddiaryexample.model.MealList;
 
 import java.util.List;
 
 public interface MealListService {
-    MealList addMealList(MealList mealList);
+    MealListDto addMealList(MealListDto mealList);
 
-    List<MealList> getAll();
+    List<MealListDto> getAll();
 
-    MealList deleteMealList(Long id);
+    MealListDto deleteMealList(Long id);
 
-    MealList updateMealList(Long id, MealList mealList);
+    MealListDto updateMealList(Long id, MealListDto mealList);
 }
