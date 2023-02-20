@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/fdexampledb'
+    username: postgres
+    password: 'admin'
+  liquibase:
+    change-log: 'classpath:/db/changelog/changelog-master.xml'
+    enabled: false
+  security:
+    jwt:
+      secret: "secret_key"
